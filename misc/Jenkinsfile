@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v1/', 'biplabmazumder2020') {
+     docker.withRegistry('https://index.docker.io/', 'biplabmazumder2020') {
        def app = docker.build("biplabmazumder2020/node-docker-repo:${commit_id}", '.').push()
      }
    }
